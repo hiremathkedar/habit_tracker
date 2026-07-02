@@ -1,0 +1,88 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+venv/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.iml
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Dependency directories
+node_modules/
+vendor/
+
+# Build outputs
+dist/
+build/
+out/
+target/
+bin/
+obj/
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Cache files
+.cache/
+.tmp/
+temp/
+*.cache
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# Java
+*.class
+*.jar
+*.war
+.gradle/
+
+# C/C++
+*.o
+*.obj
+*.exe
+
+# Go
+*.test
+coverage.out
+
+# Rust
+target/
+Cargo.lock    # Ignore only for libraries; keep for applications
+
+# .NET
+bin/
+obj/
+
+# Archives
+*.zip
+*.tar
+*.gz
+*.rar
+
+# Secrets
+*.pem
+*.key
+*.p12
+*.crt
