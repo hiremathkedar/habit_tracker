@@ -1,17 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Habit Tracker – Habits</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-950 text-slate-100">
-  <main class="max-w-4xl mx-auto px-4 py-6">
+{% extends 'base.html' %}
+{% block content %}
     <h1 class="text-2xl font-semibold mb-4">Habits</h1>
-    <form class="card rounded-2xl p-4 mb-6 grid md:grid-cols-3 gap-3">
-      <input placeholder="Habit name (e.g., Walk 20 min)" class="px-3 py-2 rounded-lg bg-slate-800 border border-white/10" />
-      <input type="color" value="#3b82f6" class="px-3 py-2 rounded-lg bg-slate-800 border border-white/10 h-10" />
+    <form method="post" action="/habits/create" class="card rounded-2xl p-4 mb-6 grid md:grid-cols-3 gap-3">
+      <input name="name" placeholder="Habit name (e.g., Walk 20 min)" class="px-3 py-2 rounded-lg bg-slate-800 border border-white/10" />
+      <input name="color" type="color" value="#3b82f6" class="px-3 py-2 rounded-lg bg-slate-800 border border-white/10 h-10" />
       <button class="px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500">Add Habit</button>
     </form>
     <div class="grid gap-3">
@@ -24,6 +16,4 @@
         <button class="px-3 py-1.5 rounded-lg bg-rose-600/80 hover:bg-rose-500 text-sm">Delete</button>
       </div>
     </div>
-  </main>
-</body>
-</html>
+{% endblock %}

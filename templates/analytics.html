@@ -1,14 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Habit Tracker – Analytics</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body class="bg-slate-950 text-slate-100">
-  <main class="max-w-4xl mx-auto px-4 py-6">
+{% extends 'base.html' %}
+{% block content %}
     <h1 class="text-2xl font-semibold mb-4">Analytics</h1>
     <p class="opacity-80 mb-4 text-sm">Past 7 days of total check-ins across all habits.</p>
     <div class="card rounded-2xl p-4">
@@ -26,7 +17,6 @@
         <div class="font-medium">PRAYING</div>
       </div>
     </div>
-  </main>
   <script>
     const labels = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
     const data = [1,0,2,0,1,0,0];
@@ -37,5 +27,5 @@
       options: { scales: { y: { beginAtZero: true, precision: 0 } } }
     });
   </script>
-</body>
-</html>
+
+{% endblock %}
