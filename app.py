@@ -29,7 +29,8 @@ def index():
 
 @app.route('/habits')
 def habits():
-    return render_template('habits.html')
+    habits = Habit.query.order_by(Habit.created_at.desc()).all()
+    return render_template('habits.html',habits=habits)
 
 @app.route('/habits/create',methods=["POST"])
 def create_habit():
