@@ -51,5 +51,14 @@ def create_habit():
     return redirect(url_for('habits'))
 
 
+@app.route('/habits/<int:habit_id>/delete',methods = ["POST"])
+def delete_habit(habit_id):
+    habit = Habit.query.get_or_404(habit_id)
+    db.session.delete(habit)
+    db.session.commit()
+    flash("Habit deleted","success")
+    return redirect(url_for('habits'))
+
+
 if __name__ == '__main__':
     app.run(debug=True)

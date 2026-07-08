@@ -15,7 +15,8 @@
           <div class="font-medium">{{habit.name}}</div>
           <div class="text-xs opacity-60">Created {{habit.created_at.strftime('%b %d, %Y')}}</div>
         </div>
-        <button class="px-3 py-1.5 rounded-lg bg-rose-600/80 hover:bg-rose-500 text-sm">Delete</button>
+        <form action="/habits/{{habit.id}}/delete" method="POST" onsubmit="return confirm('Delete this habit?')">
+          <button class="px-3 py-1.5 rounded-lg bg-rose-600/80 hover:bg-rose-500 text-sm">Delete</button></form>
       </div>
       {% endfor %}
       {% endif %}
