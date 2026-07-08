@@ -20,6 +20,29 @@
   </nav>
   <main class="max-w-4xl mx-auto px-4 py-6">
     <!-- Content will be injected here -->
+      {% with messages = get_flashed_messages(with_categories=True) %}
+
+      {% if messages %}
+      <div class="space-y-2 mb-4">
+        {% for category,message in messages %}
+          <div class="px-3 py-2 rounded-lg text-sm font-medium 
+          {% if category=='success' %}
+          bg-green-600 text-white
+          {% elif category == 'error' %}
+          bg-red-600 text-white
+          {% else %}
+          bg-slate-600 text-white
+          {% endif %}
+          
+          
+          
+          ">{{message}}</div>
+
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% endwith %}
      {% block content %} {% endblock %}
   </main>
 </body>
